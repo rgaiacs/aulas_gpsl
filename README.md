@@ -6,8 +6,9 @@ Repositório contendo os slides e exemplos que serão usados em aulas do gpsl.
 Roteiros
 ========
 
-Aqui estão dois roteiros de aulas, a inicial para os bixos no primeiro semestre
-e a avançada no segundo. O roteiro a ser seguido para cada aula é:
+Aqui estão três roteiros de aulas, a inicial para os bixos no primeiro semestre,
+a avançada no segundo e uma sobre controle de versão (git). O roteiro a ser
+seguido para cada aula é:
 
 Bixos
 -----
@@ -16,6 +17,10 @@ TODO
 Avançada
 --------
  - Aula 0: Conceitos
+
+Controle de Versão (git)
+------------------------
+ - Veja o Roteiro em git/README.md
 
 *Coding Style*
 ==============
@@ -56,4 +61,4 @@ de todos os contribuintes.
 Autores
 =======
 
-Ivan Sichmann Freitas, Sérgio Durigan Júnior
+Ivan Sichmann Freitas, Sérgio Durigan Júnior, Raniere Gaia Costa da Silva

@@ -16,33 +16,3 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-# Cria uma pasta para uso e migra para ela.
-mkdir temp
-cd temp
-
-# Inicializa o versionamento.
-git init
-
-# Mostra o estado do projeto.
-git status
-
-# Cria um arquivo, marca-o para versionamento e salva uma versao.
-echo 'Versao 1.0' > texto.txt
-git status  # Veja a diferenca.
-git add texto.txt
-git status  # Veja a diferenca.
-git commit -m 'Versao 1.0'
-git status  # Veja a diferenca.
-
-# Mostra o historico de versoes salvas.
-git log
-
-# Altera texto.txt, marca-o para versionamento e salva uma versao.
-echo 'Versao 2.0' >> texto.txt
-git status  # Veja a diferenca.
-git add texto.txt
-git status  # Veja a diferenca.
-git commit -m 'Versao 2.0'
-git status  # Veja a diferenca.
-git log  # Veja a diferenca.
