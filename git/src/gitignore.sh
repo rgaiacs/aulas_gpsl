@@ -4,57 +4,29 @@
 # This file is part of 'Aprendendo git com bash scripts'.
 #
 # 'Aprendendo git com bash scripts' is free software: you can
-# redistribute it and/or modify it under the terms of the GNU
-# General Public License as published by the Free Software
-# Foundation, either version 3 of the License, or (at your option)
-# any later version.
+# redistribute it and/or modify it under the terms of the GNU General
+# Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your option) any later version.
 #
-# 'Aprendendo git com bash scripts' is distributed in the hope
-# that it will be useful, but WITHOUT ANY WARRANTY; without even
-# the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-# PURPOSE.  See the GNU General Public License for more details.
+# 'Aprendendo git com bash scripts' is distributed in the hope that it
+# will be useful, but WITHOUT ANY WARRANTY; without even the implied
+# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See
+# the GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# Cria uma pasta para uso e migra para ela.
-mkdir temp
-cd temp
+# Utiliza init.sh.
+rm -rf tmp
+./init.sh > /dev/null
+cd tmp
 
-# Inicializa o versionamento.
-git init
-
-# Mostra o estado do projeto.
+# Cria alguns arquivos.
+printf "laranja\nmaca\npera\namora\n" > frutas.txt
+printf "leao\nlince\nonca\ntigre\n" > felinos.txt
+printf "* vermelho\n* verde\n* azul\n" > cores.md
 git status
 
-# Cria um arquivo, marca-o para versionamento e salva uma versao.
-echo 'Versao 1.0' > texto.txt
-cat texto.txt
-git status  # Veja a diferenca.
-git add texto.txt
-git status  # Veja a diferenca.
-git commit -m 'Versao 1.0.'
-git status  # Veja a diferenca.
-
-# Mostra o historico de versoes salvas.
-git log
-
-# Altera texto.txt, marca-o para versionamento e salva uma versao.
-echo 'Versao 2.0' >> texto.txt
-cat texto.txt
-git status  # Veja a diferenca.
-git add texto.txt
-git status  # Veja a diferenca.
-git commit -m 'Versao 2.0.'
-git status  # Veja a diferenca.
-git log  # Veja a diferenca.
-
-# Altera texto.txt, marca-o para versionamento e salva uma versao.
-echo 'Versao 3.0' >> texto.txt
-git add texto.txt
-git commit -m 'Versao 3.0.'
-sed -i 's/Versao/Version/g' texto.txt
-cat texto.txt
-git add texto.txt
-git commit -m 'Change to English.'
-git log  # Veja a diferenca.
+# Cria .gitignore
+echo "*.md" > .gitignore
+git status

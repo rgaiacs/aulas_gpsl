@@ -16,34 +16,36 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# Utiliza init.sh.
+# Utiliza gitignore.sh.
 rm -rf tmp
-./mv_rm.sh > /dev/null
+./gitignore.sh > /dev/null
 cd tmp
 
-# Lista todos os commits.
-git log
+# Adiciona arquivos.
+git add *.txt
 
-# Lista apenas um numero limitado de commits.
-git log -1                      # Apenas um commit.
-git log -3                      # Apenas tres commits.
+# Forca adicao de arquivo.
+git add -f *.md
 
-# Ignora um dado numero de commits.
-git log --skip=1                 # Apenas um commit.
-git log --skip=3                 # Apenas tres commits.
+git commit -m 'Adicionado arquivos.'
 
-# Filtra commits de acordo com o usuario.
-# git log --author=<pattern>
-# git log -i --author=<pattern>  # Ignore case.
+printf "ameixa\nmamao\n" >> frutas.txt
+printf "* preto\n* branco\n" >> cores.md
 
-# Filtra commits de acordo com a mensagem.
-# git log --grep=<pattern>
-# git log -i --grep=<pattern>     # Ignore case.
+# Adiciona arquivos alterados.
+git add -u
+git commit -m 'Mudancas nos arquivos.'
 
-# Mostra versao simplificada dos commits.
-git log --oneline
+printf "leopardo\npantera\n" >> felinos.txt
+printf "beta\nplati\nespada\ncarpa\n" > peixes.txt
+printf "papagaio\npombo\ncanario\nperiquito\n" >aves.txt
+printf "* debian\n* ubuntu\n* fedora \n* arch" > distros.md
 
-# Deseja uma representacao grafica em texto dos commits.
-git log --graph
-# Pode ser combinada com --oneline
-git log --graph --online
+# Adiciona arquivos novos e alterados.
+git add -A
+
+# Note que arquivos a serem ignorados nao sao adicionados.
+git status
+
+git add -f *.md
+git commit -m 'Mais arquivos.'

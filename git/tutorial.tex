@@ -1,0 +1,135 @@
+% Copyright (C) 2012 Raniere Silva
+% 
+% This work is licensed under the Creative Commons
+% Attribution-ShareAlike 3.0 Unported License. To view a copy of this
+% license, visit <http://creativecommons.org/licenses/by-sa/3.0/>.
+% 
+% This work is distributed in the hope that it will be useful, but
+% WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+\documentclass[12pt,a4paper]{book}
+% Utilizar apenas para a classe beamer
+% \usetheme{CambridgeUS}
+% \let\Tiny=\tiny % Redefine at least \Tiny for avoid warning
+
+% Tipo de arquivo.
+\usepackage[utf8]{inputenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Configura\c{c}\~{o}es regionais
+\usepackage[top=3cm,left=2cm,right=2cm,bottom=3cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{indentfirst}
+
+% Links
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\hypersetup{
+%colorlinks = true,
+}
+\usepackage{breakurl}
+
+% Pacotes matem\'{a}ticos
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\allowdisplaybreaks[4]
+\newtheorem{defi}{Definição}
+\newtheorem{prop}{Proposição}
+
+% Pacotes para tabelas
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{array}
+
+% Pacotes gr\'{a}ficos
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+
+% Pacotes para algoritmos
+\usepackage{algorithmic}
+\algsetup{linenosize=\small}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Saída:}}
+\renewcommand{\algorithmicend}{\textbf{fim}}
+\renewcommand{\algorithmicif}{\textbf{se}}
+\renewcommand{\algorithmicthen}{\textbf{ent\~{a}o}}
+\renewcommand{\algorithmicelse}{\textbf{caso contr\'{a}rio}}
+\renewcommand{\algorithmicendif}{\algorithmicend}
+\renewcommand{\algorithmicfor}{\textbf{para}}
+\renewcommand{\algorithmicforall}{\textbf{para todo}}
+\renewcommand{\algorithmicdo}{\textbf{fa\c{c}a}}
+\renewcommand{\algorithmicendfor}{\algorithmicend}
+\renewcommand{\algorithmicwhile}{\textbf{enquanto}}
+\renewcommand{\algorithmicendwhile}{\algorithmicend}
+\renewcommand{\algorithmicrepeat}{\textbf{repita}}
+\renewcommand{\algorithmicuntil}{\textbf{at\'{e}}}
+\renewcommand{\algorithmicreturn}{\textbf{retorne}}
+\renewcommand{\algorithmiccomment}[1]{\hspace{2em}/* #1 */}
+
+\usepackage{algorithm}
+\floatname{algorithm}{Algoritmo}
+
+% Pacotes para c\'{o}digos
+\usepackage{textcomp}
+\usepackage{listings}
+\renewcommand{\lstlistingname}{C\'{o}digo}
+\lstset{
+% language=Octave,
+basicstyle=\ttfamily\small,
+columns=flexible,
+numbers=left,
+numberstyle=\footnotesize,
+stepnumber=5,
+numbersep=5pt,
+% backgroundcolor=\color{white},
+% showspaces=false,
+% showstringspaces=false,
+% showtabs=false,
+% frame=single,
+tabsize=4,
+captionpos=t,
+breaklines=true,
+breakatwhitespace=false,
+% caption={\texttt{\lstname}},
+% escapeinside={\%*}{*)},
+% morekeywords={#},
+upquote=true,
+}
+
+% Index
+\usepackage{makeidx}
+\makeindex
+
+\begin{document}
+\title{Aprendendo git com bash scripts}
+\author{Raniere Gaia Costa da Silva}
+\maketitle
+
+\tableofcontents
+\lstlistoflistings
+
+\chapter{B\'{a}sico}
+\lstinputlisting[caption=init.sh, firstline=17]{src/init.sh}
+\lstinputlisting[caption=gitignore.sh]{src/gitignore.sh}
+\lstinputlisting[caption=add.sh]{src/add.sh}
+\lstinputlisting[caption=mv\_rm.sh]{src/mv_rm.sh}
+
+\chapter{Intermedi\'{a}rio}
+\lstinputlisting[caption=log.sh]{src/log.sh}
+\lstinputlisting[caption=diff.sh]{src/diff.sh}
+\lstinputlisting[caption=checkout.sh]{src/checkout.sh}
+
+\chapter{Avan\c{c}ado}
+\lstinputlisting[caption=branch.sh]{src/branch.sh}
+\lstinputlisting[caption=merge.sh]{src/merge.sh}
+\lstinputlisting[caption=rebase.sh]{src/rebase.sh}
+\lstinputlisting[caption=log.sh]{src/log2.sh}
+
+\chapter{Profissional}
+\lstinputlisting[caption=tag.sh]{src/tag.sh}
+\end{document}
