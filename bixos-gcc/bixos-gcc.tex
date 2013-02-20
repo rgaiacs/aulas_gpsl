@@ -1,0 +1,69 @@
+\documentclass{beamer}
+
+\input{../lib/estilo.tex}
+\input{../lib/titulo.tex}
+\input{../lib/shell.tex}
+
+\usepackage{xspace}
+
+\begin{document}
+
+\newcommand{\software}{\emph{software}\xspace}
+\newcommand{\Software}{\emph{Software}\xspace}
+\newcommand{\softwarelivre}{\Software Livre\xspace}
+\newcommand{\opensource}{\emph{Open-Source}\xspace}
+\gpsltitle{Aula de Compilação}
+
+\begin{frame}{Objetivos}
+  \begin{itemize}
+    \item Conhecer as bibliotecas básicas de C.
+    \item Compilar o ``Hello World''.
+    \item Compilar utilizando Makefile.
+    \item Conhecer algumas flags do gcc.
+    \item Resolver alguns erros e avisos.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{glibc}
+  glibc significa GNU C Library e é a biblioteca C mais utilizada na
+  atualidade.
+
+  Informações sobre a glibc encontram-se no formato de man pages,
+  principalmente na terceira seção .
+
+  \begin{center}
+    \begin{shell}
+      \usercmd{man 3 printf}
+    \end{shell}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{hello.c}
+  \lstinputlisting[basicstyle=\color{black},
+      keywordstyle=\color{black}, language=C]{hello.c}
+\end{frame}
+
+\begin{frame}{Compilação}
+  \begin{center}
+    \begin{shell}
+      \usercmd{cat hello.c}
+      \usercmd{gcc -o hello hello.c}
+    \end{shell}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Execução}
+  \begin{center}
+    \begin{shell}
+      \usercmd{./hello}{hello world.}
+    \end{shell}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Makefile}
+  \lstinputlisting[basicstyle=\color{black},
+      keywordstyle=\color{black}, language=make]{helloMakefile}
+\end{frame}
+
+\end{document}
